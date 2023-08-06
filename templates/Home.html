@@ -1,0 +1,28 @@
+{% extends 'basetemplate.html'%}
+{% load static%}
+
+{%block contenido%}
+
+<section class="content">
+    <div class="left">
+        <div class="top">
+            <h1>INFORMATORIO <br />
+                PLATFORM MADE FOR<br />
+                <span>TECNO BLOG</span>
+            </h1>
+            <p>
+                Explora el futuro de la tecnología con nosotros: <br />
+                bienvenido a nuestro blog donde desentrañamos <br />
+                las últimas tendencias y avances.
+            </p>
+        </div>
+        <div class="centre">
+            <a href="{% url 'lista_noticias'%}"><button>Leer más</button></a>
+        </div>
+        <div class="down">
+
+        </div>
+    </div>
+</section>
+
+{%endblock contenido%}

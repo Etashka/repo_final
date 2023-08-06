@@ -1,0 +1,20 @@
+{% extends 'basetemplate.html' %}
+{% load static %}
+{% block contenido %}
+
+   
+    <div class="login">
+        <div class="wrapper">
+            <form action="" method="post">{% csrf_token %}         
+            {{form.errors}}  
+            <h1 class="titulo" href="{% url 'usuarios:registro' %}">Registro</h1>
+            {{form.as_p}}
+            
+            <p><input type="submit" class="btn btn-primary btn-block" value="Confirmar"></p>
+            <div class="register-link" >
+                <p>Tienes cuenta? <a href="{% url 'login' %}">Inicia sesión</a></p>
+            </div>
+            </form>
+        </div>
+        </div>
+{%endblock contenido%}

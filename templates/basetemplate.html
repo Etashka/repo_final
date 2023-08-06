@@ -1,0 +1,69 @@
+{% load static %}
+<script type="text/javascript" src="{% static " ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static " ckeditor/ckeditor/ckeditor.js" %}"></script>
+
+<!DOCTYPE html>
+<html lang="es-ar">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.104.2">
+
+    <title>Tecno News</title>
+    <link rel="stylesheet" href="{% static '\css\style.css' %}">
+    <link rel="stylesheet" href="{% static '\css\Quienes.css' %}">
+    <link rel="stylesheet" href="{% static '\css\Login.css' %}">
+    <link rel="stylesheet" href="{% static '\css\noticias.css' %}">
+    <link rel="stylesheet" href="{% static '\css\noticia.css' %}">
+    <link rel="stylesheet" href="{% static '\css\about.css' %}">
+
+</head>
+
+<body>
+    <div class="container">
+        <section class="nav">
+            <div class="logo">
+                <img src="{% static '\img\logo.png' %}" alt="">
+            </div>
+            <div class="items">
+                <ul>
+
+
+                    <li><a href="{% url 'home'%}">Home</a></li>
+                    <li>|</li>
+                    <li><a href="{% url 'lista_noticias'%}">Noticias</a></li>
+                    <li>|</li>
+                    <li><a href="{% url 'quienes_somos'%}">Nosotros</a></li>
+                    <li>|</li>
+                    <li><a href="{% url 'lista_eventos' %}">Eventos</a></li>
+                    {% comment %} <li>Eventos</li> {% endcomment %}
+                    <li>|</li>
+                    <li>
+                        {% if user.is_authenticated %}
+                        <strong>{{ user.username }}</strong>
+                        <div class="mt-2"></div> <!-- Elemento div para crear un espacio vertical -->
+                        <a class="btn btn-sm btn-outline-secondary" href="{% url 'logout' %}">LOGOUT</a>
+                        {% else %}
+                        <a href="{% url 'login' %}"><img
+                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAYZJREFUSEu1lrFKxEAQhv9ZEyG7AcHmOgVRBC18BgtbRbS0s9TCWiwF0cZGCx/ATrS4Z/ABLBQEQbQ7kMMiu3ckuYxcIIfEJJfES9qd+b+ZfzaTEBp+qGF95AJCY3ajKDolouUqRTDzqxDixJLybpiXC/A975mIVqqIJ7HM/DLtuquFgEBrzhRn7jLRQ5zMvA2i2aw4W6m4+NwOMgHMHQtYI9ftDJPZ81oh8ASiVhpSC0DAtaXU4W+xUOsrBg4mAgBwbyu1UwuQWJK0ljMD3yJaIik/Y4uYrcCYNwLmx3ZQEjDUiQC0GfgCsEHAXKkhVwCUurl/hlwCwATcTAlxQY7zHlvU7y8Eg8ExAfv/s4i5CyE2bSkfs8oPer11RFEbgErOK3VAQuxZjnNb5I1vzBExX9YCWFLaRBQWAZh5JjTmuxag1FRTQWMtmviyS9+ieF0znxGwWKWD3HWdBlQRLYodbdPGAb7WH3mvfVGFyTDzYkYdhFpvRcznVT+RpQGT8jyt0/hfxQ9Mxd8ZmIDI+gAAAABJRU5ErkJggg==" />
+                    </li></a>
+                    {% endif %}
+                </ul>
+            </div>
+        </section>
+
+
+        <main>
+            {% block contenido %}
+            <!-- Contenido específico para cada página que herede de esta plantilla -->
+            {% endblock contenido %}
+        </main>
+
+
+    </div>
+
+</body>
+
+</html>

@@ -1,5 +1,4 @@
 from django.shortcuts import get_object_or_404, render
-from flask import redirect
 from apps.noticias.models import Comment, Post
 from apps.eventos.models import Eventos
 from django.urls import path

@@ -23,16 +23,13 @@ DATABASES = {
 }
 ROOT_URLCONF = 'blog.urls'
 
-# Static files (CSS, JavaScript, Images)
-STATIC_ROOT = '/home/narafinoss/Final_Project/static'
-
 # Media files (User uploaded files)
-MEDIA_ROOT = '/home/narafinoss/Final_Project/static/img'
+MEDIA_ROOT = '/home/narafinoss/repo_final/static/img'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, '/home/narafinoss/Final_Project/templates')],
+        'DIRS': [os.path.join(BASE_DIR, '/home/narafinoss/repo_final/templates')],
         'APP_DIRS': True,
     },
 ]
@@ -58,7 +55,7 @@ LOGGING = {
         'file': {
             'level': 'DEBUG',
             'class': 'logging.FileHandler',
-            'filename': '/home/narafinoss/Final_Project/logfile.log',
+            'filename': '/home/narafinoss/repo_final/logfile.log',
         },
     },
     'loggers': {
